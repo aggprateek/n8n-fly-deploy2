@@ -1,20 +1,22 @@
 app = "n8n-fly-deploy-3q7rrq"
 
 [build]
-  image = "n8nio/n8n"
+  image = "n8nio/n8n:1.39.1"
 
 [env]
+  # Supabase DB config
   DB_TYPE = "postgresdb"
   DB_POSTGRESDB_HOST = "db.ugabnyhbsvtefdfzimcm.supabase.co"
   DB_POSTGRESDB_PORT = "5432"
   DB_POSTGRESDB_DATABASE = "postgres"
   DB_POSTGRESDB_USER = "postgres"
 
+  # Webhook + server
   N8N_PORT = "5678"
   N8N_HOST = "0.0.0.0"
   WEBHOOK_TUNNEL_URL = "https://n8n-fly-deploy-3q7rrq.fly.dev"
 
-  # OPTIONAL: disable telemetry
+  # Optional extras
   N8N_DIAGNOSTICS_ENABLED = "false"
   N8N_DISABLE_PRODUCTION_MAIN_LOG = "true"
 
